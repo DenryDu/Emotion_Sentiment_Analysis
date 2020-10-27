@@ -30,4 +30,4 @@ def mainfunc():
      return render_template('result.html',txt=text,txt2=d)
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=False)

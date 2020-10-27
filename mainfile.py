@@ -12,14 +12,16 @@ import string
 from collections import Counter
 import matplotlib.pyplot as plt
 from statement import returnstat
-
+from spacy import load
+import en_core_web_sm
+nlp= en_core_web_sm.load()
 
 def emotionproc(text):
     
     database=pd.read_csv('data.csv')
     database=database[['English (en)', 'Positive', 'Negative', 'Anger','Anticipation',\
                        'Disgust', 'Fear', 'Joy', 'Sadness', 'Surprise','Trust']]
-    nlp=spacy.load('en_core_web_sm')
+    #nlp=spacy.load('en_core_web_sm')
     stopwords=nlp.Defaults.stop_words
     
     

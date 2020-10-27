@@ -9,17 +9,17 @@ from mainfile import emotionproc
 from flask import Flask, render_template,url_for,request
 app = Flask(__name__,template_folder='templates')
 
-@app.route('/')
+@app.route('/home')
 def home():
     return render_template('home_temp.html') 
 
 
-# @app.route('/')
+# @app.route('/home')
 # def func():
 #     t=emotionproc('i love you')
 #     return t
 
-@app.route('/',methods=['POST'])
+@app.route('/home',methods=['POST'])
 def mainfunc():
      text =request.form['u']
      text,w=emotionproc(text)
